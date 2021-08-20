@@ -44,7 +44,7 @@ class PersonController extends Controller
             'value' => 'required|numeric_br',
             'birthday' => 'required|date_format:d/m/Y'
         ]);
-        
+
         $data = $request->except(['id', '_token']);        
         $data['value'] = decimal_db($request->get('value'));
         $data['birthday'] = date_db($request->get('birthday'));
@@ -59,6 +59,6 @@ class PersonController extends Controller
         } else {
             $model = $this->model->create($data);
         }
-        return redirect()->route('person.index');
+        return redirect()->route('person.edit', ['id' => $model->id]);
     }
 }

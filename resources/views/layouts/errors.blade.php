@@ -1,7 +1,3 @@
-<!-- /resources/views/post/create.blade.php -->
-
-<h1>Create Post</h1>
-
 @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -11,5 +7,3 @@
         </ul>
     </div>
 @endif
-
-<!-- Create Post Form -->
