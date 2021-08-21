@@ -17,7 +17,7 @@ class PersonController extends Controller
 
     public function index()
     {
-        $data = $this->model->paginate();
+        $data = $this->model->paginate(10);
         return view('person.index', compact('data'));
     }
 
@@ -30,8 +30,6 @@ class PersonController extends Controller
     {
         $data = $this->model->find($id);
         if ($data) {
-            $data->value = decimal_br($data->value);
-            $data->birthday = date_br($data->birthday);
             return view('person.create-update', ['data' => $data]);
         }
         return redirect()->route('person.index');

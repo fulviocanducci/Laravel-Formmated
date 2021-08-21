@@ -31,8 +31,8 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="3">
-                {!! $data->render() !!}
+                <td colspan="3" class="text-center">
+                {!! $data->links() !!}
                 </td>
             </tr>
         </tfoot>
